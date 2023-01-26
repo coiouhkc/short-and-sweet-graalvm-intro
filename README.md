@@ -33,10 +33,37 @@ see https://www.graalvm.org/latest/docs/introduction/
 
 ---
 
-# Demo: native executable
+# Demo: preparation & setup
 
 <!--
-Snippets:
+
+sdk install java 22.3.r19-grl
+
+java -version
+
+gu install native-image
+
+-->
+
+---
+
+# Demo: native executable
+
+HelloWorld.java
+
+see https://www.graalvm.org/latest/reference-manual/native-image/
+
+<!--
+
+javac HelloWorld.java
+
+native-image HelloWorld
+
+file HelloWorld.class
+
+file helloworld
+
+./helloworld
 
 -->
 
@@ -44,9 +71,29 @@ Snippets:
 
 # Demo: native executable (reflection)
 
-<!--
-Snippets:
+ReflectionExample.java
 
+see https://www.graalvm.org/latest/reference-manual/native-image/guides/configure-with-tracing-agent/
+
+<!--
+
+javac ReflectionExample.java
+
+java ReflectionExample StringReverser reverse "hello"
+
+java ReflectionExample StringCapitalizer capitalize "hello"
+
+native-image --no-fallback --gc=epsilon ReflectionExample
+
+mkdir -p META-INF/native-image
+
+java -agentlib:native-image-agent=config-output-dir=META-INF/native-image ReflectionExample StringReverser reverse "hello"
+
+cat META-INF/native-image/reflect-config.json
+
+native-image ReflectionExample
+
+./reflectionexample StringReverser reverse "hello"
 -->
 
 ---
@@ -54,6 +101,7 @@ Snippets:
 # Demo: microservices
 
 see https://github.com/coiouhkc/short-and-sweet-quarkus-intro
+see https://quarkus.io/guides/building-native-image
 
 ---
 
@@ -66,6 +114,6 @@ see https://github.com/coiouhkc/short-and-sweet-quarkus-intro
 * https://www.graalvm.org/
 * https://www.graalvm.org/latest/docs/introduction/
 * https://www.graalvm.org/latest/docs/getting-started/
-* https://www.graalvm.org/latest/reference-manual/native-image/guides/configure-with-tracing-agent/
 * https://github.com/graalvm/graalvm-demos
 * https://github.com/shelajev/workshop
+* https://www.graalvm.org/22.1/reference-manual/native-image/MemoryManagement/
