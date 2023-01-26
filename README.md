@@ -57,6 +57,8 @@ see https://www.graalvm.org/latest/reference-manual/native-image/
 
 javac HelloWorld.java
 
+javap -v HelloWorld.class
+
 native-image HelloWorld
 
 file HelloWorld.class
