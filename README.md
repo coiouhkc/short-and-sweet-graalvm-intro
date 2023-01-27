@@ -111,6 +111,12 @@ see https://quarkus.io/guides/building-native-image
 
 ## ~~(Don't)~~ Do it at home!
 
+<!--
+
+https://graalvm.github.io/native-build-tools/latest/maven-plugin.html#metadata-support
+
+-->
+
 --- 
 
 # Q&A
