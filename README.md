@@ -107,6 +107,12 @@ see https://quarkus.io/guides/building-native-image
 
 ---
 
+# Demo: microservices (reflection)
+
+## ~~(Don't)~~ Do it at home!
+
+--- 
+
 # Q&A
 
 ---
@@ -119,3 +125,5 @@ see https://quarkus.io/guides/building-native-image
 * https://github.com/graalvm/graalvm-demos
 * https://github.com/shelajev/workshop
 * https://www.graalvm.org/22.1/reference-manual/native-image/MemoryManagement/
+* https://en.wikipedia.org/wiki/GraalVM
+* https://openjdk.org/jeps/295
